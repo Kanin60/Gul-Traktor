@@ -23,7 +23,26 @@ h1{
     color: var(--white);
     text-align: center;
     font-size: 3rem;
+    animation-name: top;
+    animation-duration: 400ms;
+    animation-iteration-count:1 ;
+
 }
+
+
+    
+
+
+ @keyframes top{
+from{
+    transform: translateY(-200px);
+}
+to{
+    transform: translateY(0px);
+}
+
+}
+
 span{
     color: var(--yellow);
 }
