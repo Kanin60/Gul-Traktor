@@ -21,3 +21,30 @@ for (let index = 0; index < btn.length; index++) {
     
     })
 };
+
+
+
+const inputElement = document.getElementById('email');
+const myButton = document.getElementById('send');
+const tak = document.getElementById('takForTilmelding');
+const myForm = document.querySelector('form');
+
+myButton.addEventListener('click', (e)=> {
+    e.preventDefault();
+    const inputValue = inputElement.value.trim();
+    const regex = /^[\w.-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
+    if(regex.test(inputValue)){
+        inputElement.classList.remove('invalidInput');
+        inputElement.classList.add('validInput');
+        myForm.classList.add('formAnimation')
+        tak.classList.remove('noTakBesked');
+        tak.classList.add('takBesked');
+
+    }
+    else if (inputValue === '' || !regex.test(inputValue)) {
+        inputElement.classList.remove('validInput');
+        inputElement.classList.add('invalidInput');
+        console.log(inputElement.classList);
+    return;
+    } 
+});
