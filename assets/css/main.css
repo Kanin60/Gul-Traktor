@@ -25,6 +25,9 @@ h1{
     text-align: center;
     font-size: 3rem;
     animation-name: top;
+
+    animation-duration: 400ms;
+    animation-iteration-count:1 ;
     animation-duration: 1s;
     animation-iteration-count:1 ;
 }
@@ -35,7 +38,9 @@ h1{
     to{
         transform: translateY(0px);
     }
+
 }
+
 span{
     color: var(--yellow);
 }
