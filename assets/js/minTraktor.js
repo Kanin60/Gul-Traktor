@@ -11,6 +11,8 @@ window.addEventListener('load', (e)=>{
     };
 });
 
+
+// Accordion til om Traktor section
 const btn = document.querySelectorAll('#faq-list button');
 
 
@@ -18,6 +20,19 @@ for (let index = 0; index < btn.length; index++) {
     btn[index].addEventListener('click', (e) => {
         let section = e.target.parentNode.parentNode;
         section.classList.toggle('active');
+
+    
     
     })
 };
+
+
+// Accordion til About us section
+const btnAbout = document.querySelectorAll('#about-list button');
+
+for (let index = 0; index < btnAbout.length; index++) {
+    btnAbout[index].addEventListener('click', (e) => {
+        let sectionAbout = e.target.parentNode.parentNode;
+        sectionAbout.classList.toggle('active');
+    })
+}
