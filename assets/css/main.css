@@ -1,15 +1,3 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Poppins:wght@300;400;500&display=swap%27);
-:root{     
-    --white: #FFFFFF;     
-    --lightyellow: #FAECD4;     
-    --yellow: #FAAC26;     
-    --gray: #707070;     
-    --darkgray: #343434;     
-    --h: 'Merriweather Sans', sans-serif;     
-    --p: 'Poppins', sans-serif; 
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Poppins:wght@300;400;500&display=swap');
 :root{
     --white: #FFFFFF;
