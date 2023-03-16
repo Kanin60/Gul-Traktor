@@ -11,6 +11,7 @@ window.addEventListener('load', (e)=>{
     };
 });
 
+//om traktor
 const btn = document.querySelectorAll('#faq-list button');
 
 
@@ -23,7 +24,18 @@ for (let index = 0; index < btn.length; index++) {
 };
 
 
+// Accordion til About us section
+const btnAbout = document.querySelectorAll('#about-list button');
 
+for (let index = 0; index < btnAbout.length; index++) {
+    btnAbout[index].addEventListener('click', (e) => {
+        let sectionAbout = e.target.parentNode.parentNode;
+        sectionAbout.classList.toggle('active');
+    })
+}
+
+
+//FORM
 const inputElement = document.getElementById('email');
 const myButton = document.getElementById('send');
 const tak = document.getElementById('takForTilmelding');
