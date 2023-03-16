@@ -13,6 +13,7 @@
     margin: 0;
     padding: 0;
 }
+/*HEADER START*/
 .headerMain{
     width: 100vw;
     background-color: var(--darkgray);
@@ -24,33 +25,39 @@ h1{
     text-align: center;
     font-size: 3rem;
     animation-name: top;
+
     animation-duration: 400ms;
     animation-iteration-count:1 ;
-
+    animation-duration: 1s;
+    animation-iteration-count:1 ;
 }
-
-
-    
-
-
- @keyframes top{
-from{
-    transform: translateY(-200px);
-}
-to{
-    transform: translateY(0px);
-}
+@keyframes top{
+    from{
+        transform: translateY(-200px);
+    }
+    to{
+        transform: translateY(0px);
+    }
 
 }
 
 span{
     color: var(--yellow);
 }
+/*HEADER SLUT*/
+
+/*-------------------------------------------------------------------------------------*/
+
+/* MAIN  */
 main{
     max-width: 1100px;
     margin: auto;
     overflow: hidden;
 }
+
+/*-------------------------------------------------------------------------------------*/
+
+/* GALLERY START */
 #gallery{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -61,45 +68,464 @@ main{
 .fadeImg{
     display: inline-block;
     width: 100%;
-    opacity: 0;
 }
-
 .loadImgOne{
-    transition:  opacity 600ms ease 200ms;
+    animation-name: scaleImg;
+    animation-duration: 600ms;
+    animation-timing-function: ease;
+    animation-delay: 500ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
 }
-.loadImgtwo{
-    transition:  opacity 600ms ease 700ms;
+.loadImgTwo{
+    animation-name: scaleImg;
+    animation-duration: 600ms;
+    animation-timing-function: ease;
+    animation-delay: 700ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
 }
-.loadImgthree{
-    transition:  opacity 600ms ease 1.2s;
+.loadImgThree{
+    animation-name: scaleImg;
+    animation-duration: 600ms;
+    animation-timing-function: ease;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+@keyframes scaleImg{
+    from{
+        transform: scale(0%);}
+    to{transform: scale(100%);}
+}
+/* GALLERY SLUT */
+
+/*-------------------------------------------------------------------------------------*/
+
+/* SECTION ABOUT US START */
+#about-us {
+    width: 100%;
 }
 
-.showImg{
-    opacity: 1;
-}
-footer{
-    background-color: var(--darkgray);
-    height: 200px;
-    padding: 2rem;
-}
-footer h3{
-    font-family: var(--h);
-    font-size: 2rem;
-    color: var(--white);
-}
-footer ul {
-    display: flex;
+#about-list {
+    background-color: #FAECD4;
+    width: 100%;
     max-width: 1100px;
-    margin: auto;
-    justify-content: space-around;
-    list-style: none;
+    margin:  0 auto;
+    padding: 10px;
 }
-footer li{
+
+.about-item header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.about-item button {
+    color: #191919;
+    font-size: 30px;
+    font-family: var(--h);
+    font-weight: 500;
+    background-color: #FAECD4;
+    border: none;
+    cursor: pointer;
+}
+
+.about-item button {
     font-family: var(--p);
-    color: var(--white);
 }
+
+.about-item article {
+    overflow: hidden;
+    height: 0;
+    transition: height 500ms ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+.about-item article p {
+    font-size: 1.2em;
+    font-family: var(--p);
+    color: #000;
+}
+
+.left {
+    animation-name: firstRight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.right {
+    animation-name: lastLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes firstRight {
+
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(-1000px);
+    }
+
+}
+
+@keyframes lastLeft {
+
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(1000px);
+    }
+
+}
+
+
+.about-item.active {
+    background-color: #FAECD4;
+
+}
+
+
+.about-item.active header {
+    border-bottom-color: #D1AD53;
+}
+
+.about-item.active button {
+    background-color: #FAECD4;
+    border: none;
+}
+
+.about-item.active button i {
+    transform: rotate(180deg);
+}
+
+.about-item.active article {
+    height: 200px;
+    color: #FFFFFF;
+}
+
+.about-item.active .left {
+    animation-name: firstLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.about-item.active .right {
+    animation-name: lastRight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes firstLeft {
+
+    from {
+        transform: translateX(-1000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+
+}
+
+@keyframes lastRight {
+
+    from {
+        transform: translateX(1000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+
+}
+
+.about-item.active .topline {
+    background-color: #707070;
+    height: 3px;
+    border-radius: 15px;
+    transform: scaleX(100%);
+    transition: all ease-in-out 0.5s;
+    animation-name: loopTop;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    
+}
+
+.about-item.active .bottemline {
+    background-color: #707070;
+    height: 3px;
+    border-radius: 15px;
+    width: 100%;
+    transition: all ease-in-out 0.5s;
+    animation-name: loopBottem;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    transform-origin: inherit;
+    
+}
+
+@keyframes loopTop {
+
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+
+}
+
+
+#about-us {
+    width: 100%;
+}
+
+#about-list {
+    background-color: #FAECD4;
+    width: 100%;
+    max-width: 1100px;
+    margin:  0 auto;
+    padding: 10px;
+}
+
+.about-item header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.about-item button {
+    color: #191919;
+    font-size: 30px;
+    font-family: var(--h);
+    font-weight: 500;
+    background-color: #FAECD4;
+    border: none;
+    cursor: pointer;
+}
+
+.about-item button {
+    font-family: var(--p);
+}
+
+.about-item article {
+    overflow: hidden;
+    height: 0;
+    transition: height 500ms ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+.about-item article p {
+    font-size: 1.2em;
+    font-family: var(--p);
+    color: #000;
+}
+
+.left {
+    animation-name: firstRight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.right {
+    animation-name: lastLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes firstRight {
+
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(-1000px);
+    }
+
+}
+
+@keyframes lastLeft {
+
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(1000px);
+    }
+
+}
+
+
+.about-item.active {
+    background-color: #FAECD4;
+
+}
+
+
+.about-item.active header {
+    border-bottom-color: #D1AD53;
+}
+
+.about-item.active button {
+    background-color: #FAECD4;
+    border: none;
+}
+
+.about-item.active button i {
+    transform: rotate(180deg);
+}
+
+.about-item.active article {
+    height: 200px;
+    color: #FFFFFF;
+}
+
+.about-item.active .left {
+    animation-name: firstLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.about-item.active .right {
+    animation-name: lastRight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes firstLeft {
+
+    from {
+        transform: translateX(-1000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+
+}
+
+@keyframes lastRight {
+
+    from {
+        transform: translateX(1000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+
+}
+
+.about-item.active .topline {
+    background-color: #707070;
+    height: 3px;
+    border-radius: 15px;
+    transform: scaleX(100%);
+    transition: all ease-in-out 0.5s;
+    animation-name: loopTop;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    
+}
+
+.about-item.active .bottemline {
+    background-color: #707070;
+    height: 3px;
+    border-radius: 15px;
+    width: 100%;
+    transition: all ease-in-out 0.5s;
+    animation-name: loopBottem;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    transform-origin: inherit;
+    
+}
+
+@keyframes loopTop {
+
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+
+}
+
+
+@keyframes loopBottem {
+
+    0% {
+        width: 100%;
+    }
+
+    50% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+
+}
+
+.topline {
+    background-color: #000;
+    height: 0px;
+    width: 0%;
+    transition: all ease-in-out 0.5s;
+    margin-bottom: 1rem;
+    margin-right: 10px;
+}
+
+.bottemline {
+    background-color: #000;
+    height: 0;
+    width: 0%;
+    transition: all ease-in-out 0.5s;
+}
+
+/* SECTION ABOUT US SLUT */
+
+/*-------------------------------------------------------------------------------------*/
+
+/* SECTION OM TRAKTOR START */
+
 #faq {
     width: 100%;
+    margin-bottom: 20px;
 }
 
 #faq-list {
@@ -136,12 +562,30 @@ footer li{
     overflow: hidden;
     height: 0;
     transition: height 500ms ease;
+    display: flex;
+    flex-direction: column;
     
 }
 
 .faq-item article p {
     font-size: 1.2em;
+    color: #000;
     font-family: var(--p);
+    animation-name: TurnLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes TurnLeft {
+
+    from {
+        transform: translateX(0px);
+    }
+
+    to{
+        transform: translateX(-1000px);
+    }
+
 }
 
 .faq-item.active {
@@ -167,10 +611,253 @@ footer li{
 }
 
 .faq-item.active article p {
-    color: #000;
-    font-size: 1.2em;
+    animation-name: TurnRight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    
     
 }
+
+@keyframes TurnRight {
+
+    from {
+        transform: translateX(-1000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+
+}
+
+.faq-item.active .topline-under {
+    background-color: #707070;
+    height: 3px;
+    border-radius: 15px;
+    transform: scaleX(100%);
+    transition: all ease-in-out 0.5s;
+    animation-name: loopTopUnder;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    
+}
+
+.faq-item.active .bottemline-under {
+    background-color: #707070;
+    height: 3px;
+    border-radius: 15px;
+    transform: scaleX(100%);
+    transition: all ease-in-out 0.5s;
+    animation-name: loopBottemUnder;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    
+}
+
+.topline-under {
+    background-color: #000;
+    height: 0px;
+    width: 0%;
+    transition: all ease-in-out 0.5s;
+    margin-bottom: 1rem;
+    margin-right: 10px;
+}
+
+.bottemline-under {
+    background-color: #000;
+    height: 0;
+    width: 0%;
+    transition: all ease-in-out 0.5s;
+}
+
+@keyframes loopTopUnder {
+
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+
+}
+
+@keyframes loopBottemUnder {
+
+    0% {
+        width: 100%;
+    }
+
+    50% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+
+}
+
+/* SECTION OM TRAKTOR SLUT */
+
+/*-------------------------------------------------------------------------------------*/
+
+/* TILMELDING TIL NYHEDSBREV START */
+.nyhedsbrev{
+    position: relative;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--yellow);
+    overflow: hidden;
+}
+.formTilmelding{
+    display: flex;
+    align-items: center;
+}
+.formTilmelding h3{
+    font-family: var(--h);
+    font-size: 30px;
+    font-weight: 500;
+    display: inline;
+}
+.formTilmelding input{
+    margin-left: 2rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    width: 15vw;
+    border-radius: 50px;
+    border: none;
+    opacity: 0.8;
+}
+::placeholder {
+    color: rgb(150, 148, 148);
+    opacity: 0.5; 
+    font-size: 1.2em;
+  }
+.formTilmelding button{
+    padding: 1rem;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--darkgray);
+    color: var(--white);
+    font-size: 1.2em;
+}
+.formAnimation{
+    animation-name: disappearAnimation;
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+    animation-delay: 400ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+@keyframes disappearAnimation {
+    0%{
+        transform: translateX(0px);
+    }
+
+    100%{
+        transform: translateX(110vw);
+    }
+}   
+.noTakBesked {
+    display: none;
+}  
+.takBesked {
+    position: absolute;
+    top: 30%;
+    font-family: var(--p);
+    font-size: 30px;
+    display: block;
+    animation-name: takBeskedAnimation;
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+    animation-delay: 400ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+@keyframes takBeskedAnimation {
+    0%{
+        transform: translateX(-100vw);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+} 
+.validInput {
+    animation-name: validAmination;
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+    animation-delay: 400ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+@keyframes validAmination {
+    from{
+        border: 4px solid green;
+    }
+    to{
+        border: 4px solid green;
+    }
+}
+.invalidInput {
+    /* border: 4px solid red; */
+    animation-name: invalidAnimation;
+    animation-duration: 100ms;
+    animation-timing-function: ease;
+    animation-delay: 100ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 10;
+}
+@keyframes invalidAnimation {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        border: 4px solid red;
+    }
+    50%{
+        transform: translateX(5px) translatey(5px);
+        border: 4px solid red;
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        border: 4px solid red;
+    }
+}
+/* TILMELDING TIL NYHEDSBREV SLUT */
+
+/*-------------------------------------------------------------------------------------*/
+
+/* FOOTER START */
+footer{
+    background-color: var(--darkgray);
+    height: 200px;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+footer h3{
+    font-family: var(--h);
+    font-size: 2rem;
+    color: var(--white);
+}
+footer ul {
+    display: flex;
+    max-width: 1100px;
+    margin: auto;
+    justify-content: space-around;
+    list-style: none;
+}
+footer li{
+    font-family: var(--p);
+    color: var(--white);
+}
+/* FOOTER SLUT*/
+
+/*-------------------------------------------------------------------------------------*/
+
+/* MEDIA QUERIES */
 
 @media(max-width: 768px) {
     #gallery{
